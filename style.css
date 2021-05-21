@@ -1,0 +1,70 @@
+#searchbar{
+    /* margin-left: 15%; */
+    padding:15px;
+    border-radius: 10px;
+  }
+
+input[type=text] {
+     width: 30%;
+     -webkit-transition: width 0.15s ease-in-out;
+     transition: width 0.15s ease-in-out;
+  }
+
+  /* When the input field gets focus,
+       change its width to 100% */
+    
+input[type=text]:focus {
+    width: 70%;
+}
+
+
+
+#list{
+   font-size:  1.5em;
+   margin-left: 10px;
+}
+
+#list2{
+    font-size:  1.5em;
+    margin-left: 10px;
+}
+
+.animals{
+  display: list-item;    
+ } 
+
+.section1 {
+    width: 30%;
+    height: auto;
+}
+
+.Category {
+    width: 30%;
+    height: auto;
+}
+.filter {
+    display: flex;
+    flex-direction: row;
+}
+
+#sub_cat{
+    /* margin-left: 15%; */
+    padding:15px;
+    border-radius: 10px;
+}
+
+.section2 {
+    width: 30%;
+    height: auto;
+}
+
+.section3 {
+    width: 30%;
+    height: auto;
+}
+
+#range{
+    /* margin-left: 15%; */
+    padding:15px;
+    border-radius: 10px;
+}

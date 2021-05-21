@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.full.min.js"></script>
+
+
+<style>
+
+.sectionsearch {
+    display: inline;
+    margin-right: 15px;
+    float: left;
+}
+.sectionsearch label {
+    display: block;
+    margin-bottom: 4px;
+}
+.sectionsearch select {
+    padding: 7px 6px;
+    width: 220px;
+    font-size: 15px;
+}
+.sectionsubmit {
+    display: inline;
+}
+.sectionsubmit input[type="submit"] {
+    width: 135px;
+    font-size: 17px;
+    margin-top: 21px !important;
+    margin-right: 15px;
+    background: #10a0e3;
+    border: unset;
+    color: #fff;
+    padding: 8px 13px !important;
+    cursor: pointer;
+}
+.searchbox {
+    width: 855px;
+    margin: 0 auto;
+}
+.custom-select2{width:200px;}
+</style>
+
+<script>
+var subjectObject = {
+  "Cars": {
+    "Toyota": ["0-5000", "5001-10000", "10001-20000", "20001-50000"],
+    "Hyundai": ["0-500", "5001-1000", "10001-2000", "2001-50000"],
+    "Chevrolet": ["0-55000", "5001-100700", "10001-200900", "209001-50000"]    
+  },
+  "Furniture & Household": {
+    "Sofa": ["0-5000", "5001-50000"],
+    "Bedding": ["0-50300", "5001-504000"],
+    "Table & Chair": ["0-50600", "5001-505000"]    
+  },
+  "Electronics & Appliances": {
+    "Speakers & Headphones": ["0-600", "6582-5884", "25487-985447", "1254-5824"],
+    "TV": ["0-600", "6582-5884", "25487-985447", "1254-5824"],
+    "AC": ["0-600", "6582-5884", "25487-985447", "1254-5824"]    
+  },
+  "Mobile Phones": {
+    "Apple iPhone": ["652-698", "585-695", "1254-8547", "1254-9658"],
+    "Samsung": ["159-9658", "121-5852", "125-963", "147-9658"],
+    "Huawei": ["1547-9658", "1452-9658", "1452-9658", "1458-9658"]    
+  },
+  "Computers": {
+    "HP": ["1598-8547", "4125-9658", "1587-9658"],
+    "Dell": ["1259-9658", "2548-9658", "1547-9587"]
+  }
+}
+window.onload = function() {
+  var subjectSel = document.getElementById("category");
+  var topicSel = document.getElementById("subcategory");
+  var chapterSel = document.getElementById("price");
+  for (var x in subjectObject) {
+    subjectSel.options[subjectSel.options.length] = new Option(x, x);
+  }
+  subjectSel.onchange = function() {
+    //empty Chapters- and Topics- dropdowns
+    chapterSel.length = 1;
+    topicSel.length = 1;
+    //display correct values
+    for (var y in subjectObject[this.value]) {
+      topicSel.options[topicSel.options.length] = new Option(y, y);
+    }
+  }
+  topicSel.onchange = function() {
+    //empty Chapters dropdown
+    chapterSel.length = 1;
+    //display correct values
+    var z = subjectObject[subjectSel.value][this.value];
+    for (var i = 0; i < z.length; i++) {
+      chapterSel.options[chapterSel.options.length] = new Option(z[i], z[i]);
+    }
+  }
+}
+</script>
+<script>
+$(document).ready(function() {
+  $(".category").select2();
+});
+</script>
+</head>   
+<body>
+
+<div class="searchbox">
+<form name="form1" id="form1" action="#">
+
+<div class="sectionsearch">
+<label>Category:</label>
+ <select name="category " id="category">
+    <option value="" selected="selected">Select Category</option>
+ </select>
+</div>
+<div class="sectionsearch">
+<label>Sub Category:</label>
+  <select name="subcategory" id="subcategory">
+    <option value="" selected="selected">Please select sub category</option>
+  </select>
+</div>
+<div class="sectionsearch">
+<label>Price:</label>
+  <select name="price" id="price">
+    <option value="" selected="selected">Please select price</option>
+  </select>
+</div>
+<div class="sectionsubmit">
+  <input type="submit" value="Search">  
+  </div>
+</form>
+</div>
+</body>
+</html>

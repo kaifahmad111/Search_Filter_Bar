@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom Search Bar</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <!-- input tag -->
+    <div class="filter">
+        <div class="section1">
+            <label type="text" for="searchbar">Select a CATEGORY :<br></label>
+            <input id="searchbar" onkeyup="search_category()" type="text" name="search" placeholder="Select Category..">
+            <div class="Category">
+                <!-- ordered list -->
+                <ul id='list'>
+
+                </ul>
+            </div>
+        </div>
+        <div class="section2">
+            <label type="text" for="sub_cat">Choose a <span class="key">car</span> :<br></label>
+            <select onclick="price_range()" id="sub_cat" name="sub_cat">
+                
+            </select>
+        </div>
+        <div class="section3">
+            <label type="text" for="range">Select a price Range:<br></label>
+            <select  onclick="add_listbox()" id="range" name="range">
+                
+            </select>
+        </div>
+
+    </div>
+
+</body>
+<!-- linking javscript -->
+<script src="filter.js"></script>
+
+</html>
