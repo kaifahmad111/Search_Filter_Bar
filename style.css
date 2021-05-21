@@ -68,3 +68,11 @@ input[type=text]:focus {
     padding:15px;
     border-radius: 10px;
 }
+
+.disp2 {
+    display: none;
+}
+
+.disp3 {
+    display: none;
+}

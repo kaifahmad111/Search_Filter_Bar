@@ -24,14 +24,22 @@
         </div>
         <div class="section2">
             <label type="text" for="sub_cat">Choose a <span class="key">car</span> :<br></label>
-            <select onclick="price_range()" id="sub_cat" name="sub_cat">
-                
+            
+            <input id="sub_cat" onclick="disp_list2()" type="text" name="sub_cat" placeholder="Select sub Category">    
+                <!-- ordered list -->
+                <ul class="disp2" id='list2'>
+
+                </ul>
             </select>
         </div>
         <div class="section3">
             <label type="text" for="range">Select a price Range:<br></label>
-            <select  onclick="add_listbox()" id="range" name="range">
-                
+            
+            <input id="range" onclick="disp_list3()" type="text" name="range" placeholder="Select Range">     
+                <!-- ordered list -->
+                <ul class="disp3" id='list3'>
+
+                </ul>
             </select>
         </div>
 
